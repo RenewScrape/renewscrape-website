@@ -138,7 +138,7 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 20%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -171,6 +171,7 @@ body {
     z-index: 3;
     padding: 2rem;
     position: relative;
+    margin-top: 15%;
 }
 
 .hero-title {

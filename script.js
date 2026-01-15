@@ -77,15 +77,22 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
     // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        message: document.getElementById('message').value
-    };
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
 
-    // Show success message (in production, this would send to a backend)
-    alert('Thank you for your message! We will get back to you soon.');
+    // Create email content
+    const subject = encodeURIComponent('Contact Form Submission from ' + name);
+    const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Phone: ' + phone + '\n\n' +
+        'Message:\n' + message
+    );
+
+    // Open email client
+    window.location.href = 'mailto:info@renewscrape.com?subject=' + subject + '&body=' + body;
 
     // Reset form
     this.reset();
